@@ -53,3 +53,6 @@ appserver_dependencies:
   - supervisor
 
 tor_apt_repo_url: https://tor-apt.freedom.press
+
+# Enable Tor over SSH by default
+enable_ssh_over_tor: true
