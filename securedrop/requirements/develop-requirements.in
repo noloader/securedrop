@@ -7,7 +7,7 @@ docker-py
 dnspython
 flake8
 html-linter
-molecule>=2.*
+molecule>=2.11
 pip-tools>=1.10
 #
 # pyenchant should be included here but is in Dockerfile.linting
