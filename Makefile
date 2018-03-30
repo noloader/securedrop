@@ -138,8 +138,8 @@ libvirt-share: ## Configure ACLs to allow RWX for libvirt VM (e.g. Admin Worksta
 	@find "$(PWD)" -type d -and -user $$USER -exec setfacl -m u:libvirt-qemu:rwx {} +
 	@find "$(PWD)" -type f -and -user $$USER -exec setfacl -m u:libvirt-qemu:rw {} +
 
-.PHONY: vagrant_package
-vagrant_package: ## Package up a vagrant box of the last stable SD release
+.PHONY: vagrant-package
+vagrant-package: ## Package up a vagrant box of the last stable SD release
 	@devops/scripts/vagrant_package.sh
 
 .PHONY: translate
