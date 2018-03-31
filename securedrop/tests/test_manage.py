@@ -164,11 +164,14 @@ def test_get_username_to_delete(mocker):
     assert return_value == 'test-user-12345'
 
 
-def test_reset(journalist_app, test_journo, config):
+def test_reset(journalist_app, test_journo, alembic_config, config):
     original_config = manage.config
     try:
         # We need to override the config to point at the per-test DB
         manage.config = config
+
+        # Override the hardcoded alembic.ini value
+        manage.config.TEST_ALEMBIC_INI = alembic_config
 
         return_value = manage.reset(args=None)
         assert return_value == 0
